@@ -5,13 +5,11 @@ git-diff-with-filter
 # Code
 
 ```bash
-#!/bin/bash
-
 PARAMETER=$1
 let counter=0
 git-status-with-filter ${PARAMETER} | tail -n +2 |  sed '$d' | while read modified_file; do
   echo "================="
-  let "COUNTER+=1"
+  let "counter+=1"
   echo "${counter} - ${modified_file} 🟢"
   echo "================="
   
